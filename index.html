@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: pink;
+  }
+
+  #randomButton {
+    position: absolute;
+  }
+</style>
+<title>Random Moving Button</title>
+</head>
+<body>
+  <h1 style="text-align: center;">Are you?</h1>
+<button style="width: 150px; height: 40px; background-color: palegreen;" id="randomButton">No</button>
+
+<script>
+  const randomButton = document.getElementById('randomButton');
+
+  randomButton.addEventListener('mouseenter', () => {
+    const maxX = window.innerWidth - randomButton.clientWidth;
+    const maxY = window.innerHeight - randomButton.clientHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    randomButton.style.left = `${randomX}px`;
+    randomButton.style.top = `${randomY}px`;
+  });
+</script>
+</body>
+</html>
